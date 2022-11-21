@@ -1,2 +1,5 @@
-gcc -o main.o main.c -c
-gcc -o main main.o
+mkdir build
+mkdir tmp
+gcc -o tmp/main.o main.c -c
+gcc -o build/main tmp/main.o
+rm -rf tmp
