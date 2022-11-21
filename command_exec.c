@@ -20,17 +20,15 @@ new_node(const char *src)
     return cmdn;
 }
 
-int
-cmd_process(const char *cmd_line)
+int cmd_process(const char *cmd_line)
 {
     char *cmd = calloc(MAX_CMD_LEN + 1, sizeof(char));
-
+    
     free(cmd);
     return 0;
 }
 
-int
-cmd_exec(const char *cmd, char *const *args, int in_fileno, int out_fileno)
+int cmd_exec(const char *cmd, char *const *args, int in_fileno, int out_fileno)
 {
     dup2(STDIN_FILENO, in_fileno);
     dup2(STDOUT_FILENO, out_fileno);
