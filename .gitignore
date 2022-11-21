@@ -1,2 +1,4 @@
 build
 .clang-format
+cmake-build-debug
+CMakeLists.txt
