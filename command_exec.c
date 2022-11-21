@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-extern int MAX_CMD_LEN;
+extern const int MAX_CMD_LEN;
 
 struct CmdNode
 {
@@ -10,7 +10,8 @@ struct CmdNode
     char *value;
 };
 
-struct CmdNode *new_node(const char *src)
+struct CmdNode *
+new_node(const char *src)
 {
     struct CmdNode *cmdn = malloc(sizeof(struct CmdNode));
     cmdn->l = NULL;
@@ -19,7 +20,8 @@ struct CmdNode *new_node(const char *src)
     return cmdn;
 }
 
-int cmd_process(const char *cmd_line)
+int
+cmd_process(const char *cmd_line)
 {
     char *cmd = calloc(MAX_CMD_LEN + 1, sizeof(char));
 
@@ -27,7 +29,8 @@ int cmd_process(const char *cmd_line)
     return 0;
 }
 
-int cmd_exec(const char *cmd, char *const *args, int in_fileno, int out_fileno)
+int
+cmd_exec(const char *cmd, char *const *args, int in_fileno, int out_fileno)
 {
     dup2(STDIN_FILENO, in_fileno);
     dup2(STDOUT_FILENO, out_fileno);

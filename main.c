@@ -6,18 +6,17 @@
 #include <string.h>
 #include <unistd.h>
 
-extern int cmd_process(const char *);
+extern int
+cmd_process(const char *);
 
 const char *initstr = "[%s@%s]: ";
 
-enum
-{
-    MAX_CMD_LEN = 4096
-};
+const int MAX_CMD_LEN = 4096;
 
-int main(int argc, char **argv, char **envp)
+int
+main(int argc, char **argv, char **envp)
 {
-    printf("Penis project by kolenmka (aka drocher228)\n");
+    printf("\003\nPenis project by kolenmka (aka drocher228)\n");
     while (true) {
         char cur_dir[PATH_MAX + 1];
         char *cmd = NULL;
@@ -32,5 +31,3 @@ int main(int argc, char **argv, char **envp)
         }
     }
 }
-
-
